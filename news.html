@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأخبار - وكالة دايناميكا الإخبارية</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .news-card {
+            transition: transform 0.3s ease;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-blue-600">وكالة دايناميكا الإخبارية</h1>
+                </div>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-6 space-x-reverse">
+                        <li><a href="index.html" class="text-gray-600 hover:text-blue-600">الرئيسية</a></li>
+                        <li><a href="news.html" class="text-blue-600 font-medium">الأخبار</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-blue-600">عن الوكالة</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-blue-600">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden mt-4">
+                <ul class="flex flex-col space-y-3">
+                    <li><a href="index.html" class="text-gray-600 hover:text-blue-600 block">الرئيسية</a></li>
+                    <li><a href="news.html" class="text-blue-600 font-medium block">الأخبار</a></li>
+                    <li><a href="about.html" class="text-gray-600 hover:text-blue-600 block">عن الوكالة</a></li>
+                    <li><a href="contact.html" class="text-gray-600 hover:text-blue-600 block">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="bg-blue-600 text-white py-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold">الأخبار</h2>
+            <p class="mt-2">آخر الأخبار والمستجدات من وكالة دايناميكا الإخبارية</p>
+        </div>
+    </section>
+
+    <!-- News Categories -->
+    <section class="py-6 border-b">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center">
+                <a href="#" class="m-2 px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700">الكل</a>
+                <a href="#" class="m-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300">سياسة</a>
+                <a href="#" class="m-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300">اقتصاد</a>
+                <a href="#" class="m-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300">رياضة</a>
+                <a href="#" class="m-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300">ثقافة</a>
+                <a href="#" class="m-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300">تكنولوجيا</a>
+                <a href="#" class="m-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300">صحة</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News List -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="news-list">
+                <!-- News cards -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                    <img src="https://via.placeholder.com/400x250?text=خبر+1" alt="صورة الخبر" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-blue-600 text-sm font-medium">سياسة</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">توقيع اتفاقية تعاون اقتصادي بين دول المنطقة</h3>
+                        <p class="text-gray-600 mb-4">تم اليوم توقيع اتفاقية تعاون اقتصادي بين دول المنطقة تهدف إلى تعزيز التبادل التجاري وتنمية الاقتصاد المشترك.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">منذ 3 ساعات</span>
+                            <a href="news-1.html" class="text-blue-600 hover:underline">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                    <img src="https://via.placeholder.com/400x250?text=خبر+2" alt="صورة الخبر" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-green-600 text-sm font-medium">اقتصاد</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">ارتفاع مؤشرات البورصة المحلية بنسبة 5%</h3>
+                        <p class="text-gray-600 mb-4">سجلت البورصة المحلية ارتفاعاً ملحوظاً في مؤشراتها بنسبة 5% خلال تعاملات اليوم، وسط تفاؤل المستثمرين بالإصلاحات الاقتصادية الأخيرة.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">منذ 5 ساعات</span>
+                            <a href="news-2.html" class="text-blue-600 hover:underline">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                    <img src="https://via.placeholder.com/400x250?text=خبر+3" alt="صورة الخبر" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-red-600 text-sm font-medium">رياضة</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">المنتخب الوطني يتأهل إلى نهائيات كأس العالم</h3>
+                        <p class="text-gray-600 mb-4">نجح المنتخب الوطني في التأهل إلى نهائيات كأس العالم بعد فوزه في المباراة الفاصلة على المنتخب المنافس بنتيجة 2-0.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">منذ 8 ساعات</span>
+                            <a href="news-3.html" class="text-blue-600 hover:underline">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                    <img src="https://via.placeholder.com/400x250?text=خبر+4" alt="صورة الخبر" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-purple-600 text-sm font-medium">ثقافة</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">افتتاح معرض الكتاب الدولي بمشاركة 500 دار نشر</h3>
+                        <p class="text-gray-600 mb-4">افتتح اليوم معرض الكتاب الدولي في العاصمة بمشاركة 500 دار نشر من 30 دولة، ويستمر المعرض لمدة أسبوعين.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">منذ 10 ساعات</span>
+                            <a href="news-4.html" class="text-blue-600 hover:underline">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                    <img src="https://via.placeholder.com/400x250?text=خبر+5" alt="صورة الخبر" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-yellow-600 text-sm font-medium">تكنولوجيا</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">إطلاق أحدث جيل من الهواتف الذكية بتقنيات متطورة</h3>
+                        <p class="text-gray-600 mb-4">أعلنت شركة تكنولوجيا عالمية عن إطلاق أحدث جيل من هواتفها الذكية المزودة بتقنيات الذكاء الاصطناعي وكاميرات متطورة.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">منذ 12 ساعة</span>
+                            <a href="news-5.html" class="text-blue-600 hover:underline">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                    <img src="https://via.placeholder.com/400x250?text=خبر+6" alt="صورة الخبر" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-blue-600 text-sm font-medium">صحة</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">اكتشاف علاج جديد لمرض السكري من النوع الثاني</h3>
+                        <p class="text-gray-600 mb-4">أعلن فريق بحثي عن اكتشاف علاج جديد لمرض السكري من النوع الثاني يساعد في تنظيم مستويات السكر في الدم بفعالية أكبر.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">منذ يوم</span>
+                            <a href="news-6.html" class="text-blue-600 hover:underline">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                    <img src="https://via.placeholder.com/400x250?text=خبر+7" alt="صورة الخبر" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-green-600 text-sm font-medium">اقتصاد</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">توقعات بنمو الاقتصاد المحلي بنسبة 3.5% خلال العام الجاري</h3>
+                        <p class="text-gray-600 mb-4">توقع خبراء اقتصاديون نمو الاقتصاد المحلي بنسبة 3.5% خلال العام الجاري، مدفوعاً بالإصلاحات الهيكلية وزيادة الاستثمارات الأجنبية.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">منذ يومين</span>
+                            <a href="news-7.html" class="text-blue-600 hover:underline">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                    <img src="https://via.placeholder.com/400x250?text=خبر+8" alt="صورة الخبر" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-blue-600 text-sm font-medium">سياسة</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">انعقاد القمة العربية الـ35 بمشاركة قادة الدول العربية</h3>
+                        <p class="text-gray-600 mb-4">انطلقت أعمال القمة العربية الـ35 في العاصمة بمشاركة قادة الدول العربية لمناقشة القضايا الإقليمية والدولية الراهنة.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">منذ 3 أيام</span>
+                            <a href="news-8.html" class="text-blue-600 hover:underline">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                    <img src="https://via.placeholder.com/400x250?text=خبر+9" alt="صورة الخبر" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-red-600 text-sm font-medium">رياضة</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">فريق الشباب يتوج بطلاً للدوري المحلي للمرة الخامسة في تاريخه</h3>
+                        <p class="text-gray-600 mb-4">توج فريق الشباب بطلاً للدوري المحلي للمرة الخامسة في تاريخه بعد فوزه في المباراة النهائية على فريق النصر بنتيجة 2-1.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">منذ 4 أيام</span>
+                            <a href="news-9.html" class="text-blue-600 hover:underline">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-12 flex justify-center">
+                <nav class="inline-flex rounded-md shadow">
+                    <a href="#" class="px-4 py-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 rounded-r-md">السابق</a>
+                    <a href="#" class="px-4 py-2 bg-blue-600 text-white border border-blue-600">1</a>
+                    <a href="#" class="px-4 py-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50">2</a>
+                    <a href="#" class="px-4 py-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50">3</a>
+                    <a href="#" class="px-4 py-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 rounded-l-md">التالي</a>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">وكالة دايناميكا الإخبارية</h3>
+                    <p class="text-gray-400">منصة إخبارية تفاعلية تقدم الأخبار بروايات متعددة</p>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h4 class="text-lg font-bold mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">الرئيسية</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-white">الأخبار</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">عن الوكالة</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">تواصل معنا</h4>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 وكالة دايناميكا الإخبارية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

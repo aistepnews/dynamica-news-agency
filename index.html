@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وكالة دايناميكا الإخبارية</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .news-card {
+            transition: transform 0.3s ease;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        .narrative-tab {
+            transition: all 0.3s ease;
+        }
+        .narrative-tab.active {
+            background-color: #2563eb;
+            color: white;
+        }
+        .narrative-content {
+            display: none;
+        }
+        .narrative-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-blue-600">وكالة دايناميكا الإخبارية</h1>
+                </div>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-6 space-x-reverse">
+                        <li><a href="index.html" class="text-blue-600 font-medium">الرئيسية</a></li>
+                        <li><a href="news.html" class="text-gray-600 hover:text-blue-600">الأخبار</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-blue-600">عن الوكالة</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-blue-600">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden mt-4">
+                <ul class="flex flex-col space-y-3">
+                    <li><a href="index.html" class="text-blue-600 font-medium block">الرئيسية</a></li>
+                    <li><a href="news.html" class="text-gray-600 hover:text-blue-600 block">الأخبار</a></li>
+                    <li><a href="about.html" class="text-gray-600 hover:text-blue-600 block">عن الوكالة</a></li>
+                    <li><a href="contact.html" class="text-gray-600 hover:text-blue-600 block">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-blue-600 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">أخبار متعددة الروايات</h2>
+                    <p class="text-xl mb-6">اقرأ الأخبار بالطريقة التي تناسبك: ملخص سريع، رواية رسمية، رواية نقدية، تحليل معمق، أو قصة إنسانية.</p>
+                    <a href="news.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">تصفح الأخبار</a>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://via.placeholder.com/600x400?text=وكالة+دايناميكا+الإخبارية" alt="وكالة دايناميكا الإخبارية" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-8 text-center">أحدث الأخبار</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="latest-news">
+                <!-- News cards will be loaded here -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                    <img src="https://via.placeholder.com/400x250?text=خبر+1" alt="صورة الخبر" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-blue-600 text-sm font-medium">سياسة</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">توقيع اتفاقية تعاون اقتصادي بين دول المنطقة</h3>
+                        <p class="text-gray-600 mb-4">تم اليوم توقيع اتفاقية تعاون اقتصادي بين دول المنطقة تهدف إلى تعزيز التبادل التجاري وتنمية الاقتصاد المشترك.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">منذ 3 ساعات</span>
+                            <a href="news-1.html" class="text-blue-600 hover:underline">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                    <img src="https://via.placeholder.com/400x250?text=خبر+2" alt="صورة الخبر" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-green-600 text-sm font-medium">اقتصاد</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">ارتفاع مؤشرات البورصة المحلية بنسبة 5%</h3>
+                        <p class="text-gray-600 mb-4">سجلت البورصة المحلية ارتفاعاً ملحوظاً في مؤشراتها بنسبة 5% خلال تعاملات اليوم، وسط تفاؤل المستثمرين بالإصلاحات الاقتصادية الأخيرة.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">منذ 5 ساعات</span>
+                            <a href="news-2.html" class="text-blue-600 hover:underline">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                    <img src="https://via.placeholder.com/400x250?text=خبر+3" alt="صورة الخبر" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-red-600 text-sm font-medium">رياضة</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">المنتخب الوطني يتأهل إلى نهائيات كأس العالم</h3>
+                        <p class="text-gray-600 mb-4">نجح المنتخب الوطني في التأهل إلى نهائيات كأس العالم بعد فوزه في المباراة الفاصلة على المنتخب المنافس بنتيجة 2-0.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">منذ 8 ساعات</span>
+                            <a href="news-3.html" class="text-blue-600 hover:underline">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="news.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition">عرض جميع الأخبار</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-8 text-center">مميزات وكالة دايناميكا الإخبارية</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">روايات متعددة</h3>
+                    <p class="text-gray-600">اقرأ الخبر بخمس طرق مختلفة: ملخص سريع، رواية رسمية، رواية نقدية، تحليل معمق، وقصة إنسانية.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">ربط ذكي مع يوتيوب</h3>
+                    <p class="text-gray-600">ربط تلقائي للأخبار مع فيديوهات يوتيوب ذات الصلة باستخدام الذكاء الاصطناعي.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">تصميم متجاوب</h3>
+                    <p class="text-gray-600">تصميم عربي أنيق يعمل بشكل مثالي على جميع الأجهزة: الحواسيب، الأجهزة اللوحية، والهواتف الذكية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample News Detail -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-8 text-center">تجربة الروايات المتعددة</h2>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-bold mb-4">توقيع اتفاقية تعاون اقتصادي بين دول المنطقة</h3>
+                <div class="mb-6">
+                    <img src="https://via.placeholder.com/800x400?text=صورة+الخبر" alt="صورة الخبر" class="w-full rounded-lg">
+                </div>
+                <div class="flex flex-wrap mb-6">
+                    <button class="narrative-tab active mx-1 my-1 px-4 py-2 rounded-lg bg-gray-200" data-narrative="summary">ملخص سريع</button>
+                    <button class="narrative-tab mx-1 my-1 px-4 py-2 rounded-lg bg-gray-200" data-narrative="official">الرواية الرسمية</button>
+                    <button class="narrative-tab mx-1 my-1 px-4 py-2 rounded-lg bg-gray-200" data-narrative="critical">الرواية النقدية</button>
+                    <button class="narrative-tab mx-1 my-1 px-4 py-2 rounded-lg bg-gray-200" data-narrative="analysis">تحليل معمق</button>
+                    <button class="narrative-tab mx-1 my-1 px-4 py-2 rounded-lg bg-gray-200" data-narrative="human">القصة الإنسانية</button>
+                </div>
+                <div class="narrative-content active" id="summary">
+                    <p class="text-gray-700 leading-relaxed">
+                        تم اليوم توقيع اتفاقية تعاون اقتصادي بين دول المنطقة تهدف إلى تعزيز التبادل التجاري وتنمية الاقتصاد المشترك. وقال وزير الاقتصاد إن هذه الاتفاقية ستسهم في زيادة حجم التبادل التجاري بنسبة 30% خلال السنوات الثلاث القادمة.
+                    </p>
+                </div>
+                <div class="narrative-content" id="official">
+                    <p class="text-gray-700 leading-relaxed">
+                        وفقاً للمصادر الرسمية، شهدت العاصمة اليوم توقيع اتفاقية تعاون اقتصادي استراتيجية بين دول المنطقة، بحضور رؤساء الوزراء ووزراء الاقتصاد. وأكد البيان الرسمي المشترك أن الاتفاقية تهدف إلى تعزيز التكامل الاقتصادي وزيادة حجم التبادل التجاري بنسبة 30% خلال السنوات الثلاث القادمة، من خلال تخفيض الرسوم الجمركية وتسهيل حركة البضائع والاستثمارات بين الدول الموقعة.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mt-4">
+                        وصرح وزير الاقتصاد قائلاً: "هذه الاتفاقية تمثل نقلة نوعية في العلاقات الاقتصادية بين دول المنطقة، وستفتح آفاقاً جديدة للتعاون في مختلف المجالات الاقتصادية والتجارية والاستثمارية". وأضاف أن الاتفاقية ستدخل حيز التنفيذ اعتباراً من الشهر المقبل، وسيتم تشكيل لجنة مشتركة لمتابعة تنفيذها.
+                    </p>
+                </div>
+                <div class="narrative-content" id="critical">
+                    <p class="text-gray-700 leading-relaxed">
+                        من وجهة نظر نقدية، يمكن القول إن اتفاقية التعاون الاقتصادي التي تم توقيعها اليوم بين دول المنطقة، رغم الإعلان عنها بحماس كبير، تثير العديد من التساؤلات حول جدواها الفعلية وإمكانية تنفيذها على أرض الواقع. فالتجارب السابقة للاتفاقيات المماثلة لم تحقق النتائج المرجوة منها، بسبب العقبات البيروقراطية والخلافات السياسية بين الدول المعنية.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mt-4">
+                        كما أن التوقعات بزيادة حجم التبادل التجاري بنسبة 30% خلال ثلاث سنوات تبدو مبالغاً فيها في ظل التحديات الاقتصادية العالمية الحالية. ويرى بعض الخبراء الاقتصاديين أن الاتفاقية تفتقر إلى آليات واضحة لحل النزاعات التجارية وحماية المنتج المحلي من المنافسة غير العادلة، مما قد يؤثر سلباً على بعض القطاعات الاقتصادية في الدول الأقل نمواً.
+                    </p>
+                </div>
+                <div class="narrative-content" id="analysis">
+                    <p class="text-gray-700 leading-relaxed">
+                        في تحليل معمق للاتفاقية الاقتصادية التي تم توقيعها بين دول المنطقة، نجد أنها تأتي في سياق تحولات اقتصادية إقليمية وعالمية مهمة. فمن ناحية، تسعى دول المنطقة إلى تعزيز تكاملها الاقتصادي لمواجهة التحديات الناجمة عن الأزمات الاقتصادية العالمية والتغيرات في سلاسل التوريد العالمية بعد جائحة كورونا. ومن ناحية أخرى، تمثل الاتفاقية محاولة لتقليل الاعتماد على الاقتصادات الكبرى وتنويع الشركاء التجاريين.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mt-4">
+                        وتتضمن الاتفاقية ثلاثة محاور رئيسية: تخفيض الرسوم الجمركية بنسب تتراوح بين 15% و25% على معظم السلع، وتسهيل إجراءات التبادل التجاري من خلال توحيد المعايير والمواصفات، وتشجيع الاستثمارات البينية من خلال منح حوافز ضريبية وتسهيلات تمويلية. ومن المتوقع أن تستفيد قطاعات الصناعات التحويلية والزراعة والخدمات اللوجستية بشكل خاص من هذه الاتفاقية.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mt-4">
+                        ومن الجدير بالذكر أن الكلمات المفتاحية في هذا السياق هي: التكامل الاقتصادي، التبادل التجاري، الرسوم الجمركية، الاستثمارات البينية، سلاسل التوريد.
+                    </p>
+                </div>
+                <div class="narrative-content" id="human">
+                    <p class="text-gray-700 leading-relaxed">
+                        من الناحية الإنسانية، تحمل اتفاقية التعاون الاقتصادي التي وقعت اليوم بين دول المنطقة آمالاً كبيرة للملايين من المواطنين الذين يتطلعون إلى تحسين ظروفهم المعيشية. فخلف الأرقام والإحصائيات والبنود القانونية، هناك قصص إنسانية لعائلات تأمل أن تؤدي هذه الاتفاقية إلى خلق فرص عمل جديدة وتحسين مستوى الدخل وتوفير سلع بأسعار أقل.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mt-4">
+                        محمد، صاحب مصنع صغير للمنسوجات، يرى في الاتفاقية فرصة لتوسيع نطاق أعماله وتصدير منتجاته إلى أسواق جديدة. يقول: "لطالما كانت الرسوم الجمركية المرتفعة عائقاً أمام توسعنا، وآمل أن تفتح هذه الاتفاقية أبواباً جديدة لنا". وفي المقابل، تشعر سميرة، المعلمة التي تعيل أسرة من خمسة أفراد، بالقلق من تأثير الاتفاقية على أسعار السلع الأساسية. "نأمل أن تؤدي الاتفاقية إلى خفض الأسعار وليس العكس"، تقول بترقب.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mt-4">
+                        وهذا يؤثر بشكل مباشر على حياة الناس اليومية، حيث يترقب المواطنون نتائج ملموسة تنعكس على مستوى معيشتهم، من خلال توفير فرص عمل أفضل وأسعار أقل للسلع الأساسية وتحسين الخدمات العامة.
+                    </p>
+                </div>
+                <div class="mt-6">
+                    <div class="flex items-center mb-4">
+                        <div class="text-blue-600 text-2xl ml-3">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h4 class="text-lg font-bold">فيديو ذو صلة</h4>
+                    </div>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-64 md:h-96 rounded-lg"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">وكالة دايناميكا الإخبارية</h3>
+                    <p class="text-gray-400">منصة إخبارية تفاعلية تقدم الأخبار بروايات متعددة</p>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h4 class="text-lg font-bold mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">الرئيسية</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-white">الأخبار</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">عن الوكالة</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">تواصل معنا</h4>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 وكالة دايناميكا الإخبارية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Narrative tabs
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.narrative-tab');
+            const contents = document.querySelectorAll('.narrative-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const narrative = this.getAttribute('data-narrative');
+                    
+                    // Remove active class from all tabs and contents
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to selected tab and content
+                    this.classList.add('active');
+                    document.getElementById(narrative).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

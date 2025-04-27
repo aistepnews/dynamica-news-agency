@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عن الوكالة - وكالة دايناميكا الإخبارية</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-blue-600">وكالة دايناميكا الإخبارية</h1>
+                </div>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-6 space-x-reverse">
+                        <li><a href="index.html" class="text-gray-600 hover:text-blue-600">الرئيسية</a></li>
+                        <li><a href="news.html" class="text-gray-600 hover:text-blue-600">الأخبار</a></li>
+                        <li><a href="about.html" class="text-blue-600 font-medium">عن الوكالة</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-blue-600">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden mt-4">
+                <ul class="flex flex-col space-y-3">
+                    <li><a href="index.html" class="text-gray-600 hover:text-blue-600 block">الرئيسية</a></li>
+                    <li><a href="news.html" class="text-gray-600 hover:text-blue-600 block">الأخبار</a></li>
+                    <li><a href="about.html" class="text-blue-600 font-medium block">عن الوكالة</a></li>
+                    <li><a href="contact.html" class="text-gray-600 hover:text-blue-600 block">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="bg-blue-600 text-white py-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold">عن الوكالة</h2>
+            <p class="mt-2">تعرف على وكالة دايناميكا الإخبارية ورؤيتنا ورسالتنا</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 mb-8 md:mb-0 md:ml-8">
+                        <img src="https://via.placeholder.com/600x400?text=وكالة+دايناميكا+الإخبارية" alt="وكالة دايناميكا الإخبارية" class="rounded-lg shadow-md">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-600">من نحن</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            وكالة دايناميكا الإخبارية هي منصة إعلامية تفاعلية تأسست عام 2025 بهدف تقديم محتوى إخباري متميز يراعي تعدد وجهات النظر ويحترم ذكاء القارئ. نسعى لتقديم الأخبار بطرق مبتكرة تتيح للقارئ فهماً أعمق للأحداث من زوايا مختلفة.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            ما يميزنا هو نظام الروايات المتعددة الذي يتيح للقارئ اختيار الطريقة التي يفضلها لقراءة الخبر: ملخص سريع، رواية رسمية، رواية نقدية، تحليل معمق، أو قصة إنسانية. كما نتميز بالربط الذكي مع مقاطع الفيديو ذات الصلة من قناة Step News Agency على يوتيوب.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <h3 class="text-2xl font-bold mb-6 text-blue-600 text-center">رؤيتنا ورسالتنا</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="text-xl font-bold mb-3 text-blue-600">رؤيتنا</h4>
+                            <p class="text-gray-700 leading-relaxed">
+                                نتطلع لأن نكون المنصة الإخبارية الرائدة في تقديم محتوى إعلامي متعدد الأبعاد يحترم تنوع وجهات النظر ويساهم في بناء وعي مجتمعي قائم على الفهم العميق للأحداث والقضايا المحلية والعالمية.
+                            </p>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="text-xl font-bold mb-3 text-blue-600">رسالتنا</h4>
+                            <p class="text-gray-700 leading-relaxed">
+                                تقديم محتوى إخباري متميز يجمع بين المصداقية والعمق والتنوع، من خلال نظام روايات متعددة يتيح للقارئ فهماً شاملاً للأحداث، مع الاستفادة من تقنيات الذكاء الاصطناعي لتعزيز تجربة المستخدم وربط المحتوى المكتوب بالمحتوى المرئي.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <h3 class="text-2xl font-bold mb-6 text-blue-600 text-center">قيمنا</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm text-center">
+                            <div class="text-blue-600 text-4xl mb-4">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">المصداقية والتوازن</h4>
+                            <p class="text-gray-700">
+                                نلتزم بنقل الحقائق بدقة وتوازن، مع عرض مختلف وجهات النظر دون تحيز.
+                            </p>
+                        </div>
+                        <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm text-center">
+                            <div class="text-blue-600 text-4xl mb-4">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">الابتكار</h4>
+                            <p class="text-gray-700">
+                                نسعى دائماً لتطوير أساليب جديدة في تقديم المحتوى الإخباري باستخدام أحدث التقنيات.
+                            </p>
+                        </div>
+                        <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm text-center">
+                            <div class="text-blue-600 text-4xl mb-4">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">احترام التنوع</h4>
+                            <p class="text-gray-700">
+                                نؤمن بأهمية تنوع الآراء والثقافات، ونعمل على عكس هذا التنوع في محتوانا.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <h3 class="text-2xl font-bold mb-6 text-blue-600 text-center">فريقنا</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm text-center">
+                            <img src="https://via.placeholder.com/150?text=مدير+التحرير" alt="مدير التحرير" class="w-24 h-24 rounded-full mx-auto mb-4">
+                            <h4 class="text-lg font-bold mb-1">أحمد محمود</h4>
+                            <p class="text-gray-600 mb-3">مدير التحرير</p>
+                            <p class="text-gray-700 text-sm">
+                                صحفي مخضرم بخبرة 15 عاماً في مجال الصحافة والإعلام.
+                            </p>
+                        </div>
+                        <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm text-center">
+                            <img src="https://via.placeholder.com/150?text=رئيس+قسم+الأخبار" alt="رئيس قسم الأخبار" class="w-24 h-24 rounded-full mx-auto mb-4">
+                            <h4 class="text-lg font-bold mb-1">سارة خالد</h4>
+                            <p class="text-gray-600 mb-3">رئيس قسم الأخبار</p>
+                            <p class="text-gray-700 text-sm">
+                                متخصصة في تغطية الشؤون السياسية والاقتصادية.
+                            </p>
+                        </div>
+                        <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm text-center">
+                            <img src="https://via.placeholder.com/150?text=مدير+التكنولوجيا" alt="مدير التكنولوجيا" class="w-24 h-24 rounded-full mx-auto mb-4">
+                            <h4 class="text-lg font-bold mb-1">محمد علي</h4>
+                            <p class="text-gray-600 mb-3">مدير التكنولوجيا</p>
+                            <p class="text-gray-700 text-sm">
+                                خبير في تطوير المنصات الرقمية وتطبيقات الذكاء الاصطناعي.
+                            </p>
+                        </div>
+                        <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm text-center">
+                            <img src="https://via.placeholder.com/150?text=مديرة+المحتوى" alt="مديرة المحتوى" class="w-24 h-24 rounded-full mx-auto mb-4">
+                            <h4 class="text-lg font-bold mb-1">ليلى عمر</h4>
+                            <p class="text-gray-600 mb-3">مديرة المحتوى</p>
+                            <p class="text-gray-700 text-sm">
+                                متخصصة في إنتاج المحتوى الإبداعي والقصص الإنسانية.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">وكالة دايناميكا الإخبارية</h3>
+                    <p class="text-gray-400">منصة إخبارية تفاعلية تقدم الأخبار بروايات متعددة</p>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h4 class="text-lg font-bold mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">الرئيسية</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-white">الأخبار</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">عن الوكالة</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">تواصل معنا</h4>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 وكالة دايناميكا الإخبارية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
