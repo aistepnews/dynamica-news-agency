@@ -22,12 +22,24 @@
 </head>
 <body class="min-h-screen flex flex-col">
 
+  <!-- Navigation -->
   <header class="bg-white shadow-md p-4">
-    <h1 class="text-3xl font-bold text-center text-blue-700">تحليل الخبر</h1>
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-700">وكالة دايناميكا الإخبارية</h1>
+      <nav>
+        <a href="index.html" class="text-blue-600 hover:underline ml-4">الرئيسية</a>
+        <a href="news.html" class="text-blue-600 hover:underline ml-4">الأخبار</a>
+        <a href="about.html" class="text-blue-600 hover:underline ml-4">عن الوكالة</a>
+        <a href="contact.html" class="text-blue-600 hover:underline">اتصل بنا</a>
+      </nav>
+    </div>
   </header>
 
   <main class="flex-grow container mx-auto px-4 py-8">
-    <h2 id="article-title" class="text-2xl font-bold text-center text-gray-800 mb-8"></h2>
+    <h2 id="article-title" class="text-3xl font-bold text-center text-gray-800 mb-8"></h2>
+    <div id="article-image" class="mb-8 flex justify-center"></div>
+
+    <div id="article-video" class="mb-8 flex justify-center"></div>
 
     <div class="flex flex-wrap justify-center gap-4 mb-8">
       <button class="tab-button" data-tab="summary">ملخص سريع</button>
@@ -40,71 +52,95 @@
     <div id="tab-content" class="bg-white rounded-lg shadow-md p-6 text-lg leading-relaxed text-gray-700">
       <!-- النص سيتغير حسب التبويب -->
     </div>
+
+    <div class="mt-8 flex justify-center gap-6">
+      <a id="share-twitter" href="#" target="_blank" class="bg-blue-400 text-white px-4 py-2 rounded-lg">مشاركة عبر تويتر</a>
+      <a id="share-facebook" href="#" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg">مشاركة عبر فيسبوك</a>
+    </div>
+
   </main>
 
   <footer class="bg-gray-800 text-white py-4 text-center">
     &copy; 2025 وكالة دايناميكا الإخبارية. جميع الحقوق محفوظة.
   </footer>
 
-  <script>
-    // استرجاع العنوان من LocalStorage
-    const title = localStorage.getItem('selectedTitle');
-    document.getElementById('article-title').textContent = title || 'عنوان غير متوفر';
+<script>
+  const title = localStorage.getItem('selectedTitle');
+  const imageUrl = localStorage.getItem('selectedImage');
+  const youtubeUrl = localStorage.getItem('selectedYoutube');
 
-    // توليد نصوص ذكية بناءً على العنوان
-    function generateContent(type) {
-      if (!title) return 'لا يوجد محتوى.';
+  document.getElementById('article-title').textContent = title || 'عنوان غير متوفر';
 
-      let lowerTitle = title.toLowerCase();
-      let base = '';
+  if (imageUrl) {
+    document.getElementById('article-image').innerHTML = `<img src="${imageUrl}" alt="صورة الخبر" class="rounded-lg shadow-lg w-full max-w-3xl">`;
+  }
 
-      if (lowerTitle.includes('ترامب')) {
-        base = 'خبر سياسي يتعلق بالتوترات الدولية ودور ترامب في ذلك.';
-      } else if (lowerTitle.includes('اقتصاد') || lowerTitle.includes('بورصة') || lowerTitle.includes('دولار')) {
-        base = 'خبر اقتصادي يتناول التغييرات في الأسواق المالية أو التأثيرات الاقتصادية.';
-      } else if (lowerTitle.includes('قصف') || lowerTitle.includes('انفجار') || lowerTitle.includes('صراع')) {
-        base = 'خبر عسكري وإنساني يتحدث عن النزاعات المسلحة وآثارها.';
-      } else if (lowerTitle.includes('انتخابات') || lowerTitle.includes('رئاسة')) {
-        base = 'خبر سياسي يتناول الحملات الانتخابية والتغيرات السياسية.';
-      } else {
-        base = 'خبر عام يغطي حدثاً بارزاً في الساحة المحلية أو الدولية.';
-      }
+  if (youtubeUrl) {
+    document.getElementById('article-video').innerHTML = `
+      <iframe class="rounded-lg shadow-lg w-full max-w-3xl" height="400" src="${youtubeUrl.replace('watch?v=', 'embed/')}" frameborder="0" allowfullscreen></iframe>
+    `;
+  }
 
-      switch (type) {
-        case 'summary':
-          return `🔹 ملخص سريع: ${base}`;
-        case 'official':
-          return `🔹 الرواية الرسمية: وفقاً للجهات الرسمية، ${base} ويأتي هذا في إطار السياسات المعتمدة مؤخراً.`;
-        case 'critical':
-          return `🔹 الرواية النقدية: بعض المحللين يعتبرون أن ${base} يعبر عن خلل بنيوي يجب معالجته.`;
-        case 'analysis':
-          return `🔹 تحليل معمق: بتحليل خلفيات الحدث، يتضح أن ${base} يتداخل مع معطيات إقليمية وعالمية معقدة.`;
-        case 'dimensions':
-          return `🔹 أبعاد الخبر: لهذا الحدث تأثيرات مباشرة وغير مباشرة تمتد إلى الجوانب السياسية، الاجتماعية، والاقتصادية.`;
-        default:
-          return 'لا يوجد محتوى.';
-      }
+  function generateContent(type) {
+    if (!title) return 'لا يوجد محتوى.';
+
+    let base = '';
+    const lowerTitle = title.toLowerCase();
+
+    if (lowerTitle.includes('ترامب')) {
+      base = 'تتناول الأخبار السياسية تطورات المشهد الأمريكي بقيادة ترامب وتأثيراته الدولية.';
+    } else if (lowerTitle.includes('اقتصاد') || lowerTitle.includes('بورصة') || lowerTitle.includes('دولار')) {
+      base = 'تحليل للوضع الاقتصادي العالمي والتحديات المرتبطة بالأسواق المالية.';
+    } else if (lowerTitle.includes('قصف') || lowerTitle.includes('انفجار') || lowerTitle.includes('صراع')) {
+      base = 'دراسة لأثر النزاعات العسكرية على الوضع الإنساني والسياسي.';
+    } else if (lowerTitle.includes('انتخابات') || lowerTitle.includes('رئاسة')) {
+      base = 'تغطية معمقة للسباق الانتخابي والتغييرات السياسية المتوقعة.';
+    } else {
+      base = 'حدث بارز يعكس تحولات مهمة في الساحة الدولية أو المحلية.';
     }
 
-    // تفعيل التبويبات
-    const buttons = document.querySelectorAll('.tab-button');
-    const tabContent = document.getElementById('tab-content');
+    switch (type) {
+      case 'summary':
+        return `📌 ملخص: ${base}`;
+      case 'official':
+        return `📜 الرواية الرسمية: الجهات الرسمية تؤكد أن ${base} يأتي استجابة للتطورات الأخيرة.`;
+      case 'critical':
+        return `🔍 الرواية النقدية: يرى المراقبون أن ${base} يخفي خلفه تحديات أكبر مما يصرّح به المسؤولون.`;
+      case 'analysis':
+        return `🧠 التحليل المعمق: تحليل معطيات ${base} يظهر ارتباطه بأبعاد سياسية واقتصادية أعمق.`;
+      case 'dimensions':
+        return `🌎 أبعاد الحدث: ${base} يترك آثاراً ملحوظة على المجتمع المحلي والدولي بمختلف الجوانب.`;
+      default:
+        return 'لا يوجد محتوى.';
+    }
+  }
 
-    buttons.forEach(button => {
-      button.addEventListener('click', function() {
-        buttons.forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-        const type = this.getAttribute('data-tab');
-        tabContent.textContent = generateContent(type);
-      });
+  const buttons = document.querySelectorAll('.tab-button');
+  const tabContent = document.getElementById('tab-content');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      const type = this.getAttribute('data-tab');
+      tabContent.textContent = generateContent(type);
     });
+  });
 
-    // افتراضياً نعرض الملخص
-    if (buttons.length > 0) {
-      buttons[0].classList.add('active');
-      tabContent.textContent = generateContent('summary');
-    }
-  </script>
+  if (buttons.length > 0) {
+    buttons[0].classList.add('active');
+    tabContent.textContent = generateContent('summary');
+  }
+
+  // مشاركة على تويتر وفيسبوك
+  const twitterBtn = document.getElementById('share-twitter');
+  const facebookBtn = document.getElementById('share-facebook');
+  const shareUrl = encodeURIComponent(window.location.href);
+  const shareText = encodeURIComponent(title);
+
+  twitterBtn.href = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`;
+  facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+</script>
 
 </body>
 </html>
