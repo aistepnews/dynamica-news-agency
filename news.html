@@ -30,29 +30,39 @@
     <p>© 2025 وكالة ديناميكا الإخبارية</p>
   </footer>
 
-  <script>
-    async function loadNews() {
-      try {
-        const res = await fetch("https://dynamica-news-api.onrender.com/news");
-        const news = await res.json();
-        const container = document.getElementById("news-list");
-        container.innerHTML = "";
-        news.forEach(item => {
-          const card = document.createElement("article");
-          card.classList.add("news-card");
-          card.innerHTML = `
-            <h2>${item.title}</h2>
-            <p>${item.content}</p>
-          `;
-          container.appendChild(card);
-        });
-      } catch(err) {
-        console.error("خطأ عند جلب الأخبار:", err);
-      }
-    }
+<script>
+  async function loadNews() {
+    try {
+      const res = await fetch("https://dynamica-news-api.onrender.com/news");
+      console.log("fetch status:", res.status);
+      const news = await res.json();
+      console.log("response JSON:", news);
 
-    document.getElementById("btn-load")
-            .addEventListener("click", loadNews);
-  </script>
+      const container = document.getElementById("news-list");
+      container.innerHTML = "";
+
+      if (!Array.isArray(news) || news.length === 0) {
+        container.innerHTML = "<p>لا توجد مقالات لعرضها حالياً.</p>";
+        return;
+      }
+
+      news.forEach(item => {
+        const card = document.createElement("article");
+        card.classList.add("news-card");
+        card.innerHTML = `
+          <h2>${item.title}</h2>
+          <p>${item.content}</p>
+        `;
+        container.appendChild(card);
+      });
+    } catch(err) {
+      console.error("خطأ عند جلب الأخبار:", err);
+      document.getElementById("news-list").innerHTML = "<p>حدث خطأ أثناء التحميل.</p>";
+    }
+  }
+
+  document.getElementById("btn-load")
+          .addEventListener("click", loadNews);
+</script>
 </body>
 </html>
