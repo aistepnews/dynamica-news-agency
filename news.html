@@ -40,10 +40,7 @@
   async function loadNews() {
     try {
       const res = await fetch("https://dynamica-news-api.onrender.com/news");
-      console.log("fetch status:", res.status);
       const news = await res.json();
-      console.log("response JSON:", news);
-
       const container = document.getElementById("news-list");
       container.innerHTML = "";
 
@@ -56,19 +53,23 @@
         const card = document.createElement("article");
         card.classList.add("news-card");
         card.innerHTML = `
+          ${item.image_url ? `<img src="${item.image_url}" alt="صورة الخبر" class="news-image"/>` : ""}
           <h2>${item.title}</h2>
           <p>${item.content}</p>
+          <a href="${item.source_url}" target="_blank">${item.source}</a>
+          <small>${item.published_date}</small>
+          <button onclick="analyze(${item.id})">حلل المقال</button>
+          <div id="narrative-${item.id}" class="narrative"></div>
         `;
         container.appendChild(card);
       });
-    } catch(err) {
-      console.error("خطأ عند جلب الأخبار:", err);
-      document.getElementById("news-list").innerHTML = "<p>حدث خطأ أثناء التحميل.</p>";
+    } catch (err) {
+      document.getElementById("news-list").innerHTML = "<p>فشل الاتصال بالسيرفر.</p>";
     }
   }
 
-  document.getElementById("btn-load")
-          .addEventListener("click", loadNews);
+  // استدعاء تلقائي عند فتح الصفحة
+  window.addEventListener("DOMContentLoaded", loadNews);
 </script>
 </body>
 </html>
