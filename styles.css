@@ -1,0 +1,49 @@
+/* styles.css */
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background: #f5f5f5;
+  text-align: center;
+  padding: 1rem;
+}
+
+nav {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+nav button {
+  margin: 0 .5rem;
+  padding: .5rem 1rem;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+}
+
+nav button[data-filter="all"] {
+  background: #007bff;
+  color: #fff;
+}
+
+#btn-load {
+  display: block;
+  margin: 1rem auto;
+  padding: .75rem 1.5rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.news-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  background: #fff;
+}
